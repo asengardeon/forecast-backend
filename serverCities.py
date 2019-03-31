@@ -21,7 +21,7 @@ class Cities(Resource):
         conn = db_connect.connect()
         rId = request.form['id']
         rName = request.form['name']
-        conn.execute("insert into City values (?, ?)", (rId, rName))  # This line performs query and returns json result
+        conn.execute("insert into City values (?, ?)", (int(rId), rName))  # This line performs query and returns json result
         return {"id": rId, "name": rName}
 
 
